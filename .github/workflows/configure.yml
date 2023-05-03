@@ -25,8 +25,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy Bicep file
-    - name: deploy
-      uses: azure/arm-deploy@v1
+
+    - uses: azure/arm-deploy@v1
+      id: deploy
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
