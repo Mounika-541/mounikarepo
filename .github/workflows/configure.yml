@@ -14,11 +14,13 @@ jobs:
     - uses: actions/checkout@main
 
       # Log into Azure
-    - uses: azure/CLI@v1
+    - name: show az version
+      uses: azure/CLI@v1
       with:
-        inlineScript:|
+        inlineScript: |
             az version
-    -uses: azure/login@v1
+            
+    - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
