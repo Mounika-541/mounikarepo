@@ -23,16 +23,11 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Azure CLI
-      uses: Azure/cli@1.0.4
-      with:
-        inlineScript: |
-            AZURE_RG
+
 
       # Deploy Bicep file
     - name: Run ARM deploy
       uses: azure/arm-deploy@v1
-      id: arm-deploy
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
