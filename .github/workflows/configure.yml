@@ -1,9 +1,6 @@
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
+
 name: Azure ARM
 jobs:
   build-and-deploy:
