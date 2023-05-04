@@ -25,6 +25,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Azure CLI
       uses: Azure/cli@1.0.4
+      with:
+        inlineScript: |
+            AZURE_RG
 
       # Deploy Bicep file
     - name: Run ARM deploy
