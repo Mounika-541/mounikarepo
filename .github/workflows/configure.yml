@@ -12,13 +12,6 @@ jobs:
 
       # Checkout code
     - uses: actions/checkout@main
-
-      # Log into Azure
-    - name: show az version
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az version
             
     - uses: azure/login@v1
       with:
